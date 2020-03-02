@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.capitalone.aws.statelang.validator</groupId>
+  <artifactId>my-mojo</artifactId>
+  <version>1</version>
+  <packaging>jar</packaging>
+  <name>Test MyMojo</name>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.capitalone.aws.statelang.validator</groupId>
+        <artifactId>statelangvalidator-maven-plugin</artifactId>
+        <version>1</version>
+        <configuration>
+          <!-- Specify the MyMojo parameter -->
+          <inputFileName>resources/definition.json</inputFileName>
+          <outputDirectory>target/test-harness/project-to-test</outputDirectory>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <goals>
+              <goal>statelangvalidator</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
